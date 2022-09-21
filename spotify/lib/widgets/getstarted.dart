@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:spotify/main.dart';
 
 import 'home.dart';
+import 'login.dart';
 
 class GetStarted extends StatefulWidget {
   const GetStarted({super.key});
@@ -68,7 +69,7 @@ class _GetStartedState extends State<GetStarted> {
                       Navigator.push<void>(
                         context,
                         MaterialPageRoute<void>(
-                          builder: (BuildContext context) => MyHomePage(),
+                          builder: (BuildContext context) => LoginWidget(),
                         ),
                       );
                     });
