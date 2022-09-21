@@ -268,15 +268,14 @@ class _LibraryWidgetState extends State<LibraryWidget> {
                       children: [
                         Container(
                             child: Row(
-                              
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              // crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          // crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
                               width: 50,
                               // height: 40,
                               margin: EdgeInsets.only(top: 15, left: 5),
-                              alignment: Alignment.topLeft, 
+                              alignment: Alignment.topLeft,
                               child: Image.asset('${_activitiesIcon[index]}'),
                             ),
                             Container(

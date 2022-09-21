@@ -1,9 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:spotify/widgets/home.dart';
 import 'package:spotify/widgets/library.dart';
 import 'package:spotify/widgets/search.dart';
+import 'package:spotify/widgets/startup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,20 +16,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    
       theme: ThemeData(
-        
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
-
+      home: StartUpWidget(
+        click: false,
+      ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
-
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -39,60 +36,51 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int selectedIndex = 0;
 
- onTap(index){
-  setState(() {
-    selectedIndex = index;
-  });
- }
- final List<Widget> screens = [
-  const HomeWidget(),
-  const SearchWidget(),
-  const LibraryWidget(),
+  onTap(index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
 
- ];
+  final List<Widget> screens = [
+    const HomeWidget(),
+    const SearchWidget(),
+    const LibraryWidget(),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-      backgroundColor:  Colors.black,
+      backgroundColor: Colors.black,
       body: screens[selectedIndex],
-        
-        
-      
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         backgroundColor: Colors.black,
         onTap: onTap,
-        
+
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Image.asset('assets/home.png',
-            color : selectedIndex == 0 ? Colors.green : Colors.white
-            ),
-            
+                color: selectedIndex == 0 ? Colors.green : Colors.white),
             label: '',
-
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/search.png',
-              color : selectedIndex == 1 ? Colors.green : Colors.white
-              //color: Colors.green,
-            ),
+            icon: Image.asset('assets/search.png',
+                color: selectedIndex == 1 ? Colors.green : Colors.white
+                //color: Colors.green,
+                ),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: Image.asset('assets/book.png',
-            color : selectedIndex == 2 ? Colors.green : Colors.white),
+                color: selectedIndex == 2 ? Colors.green : Colors.white),
             label: '',
           ),
         ],
 
         //selectedItemColor: Colors.amber[800],
       ), // This trailing comma makes auto-formatting nicer for build methods.
-      
-      
     );
   }
 }

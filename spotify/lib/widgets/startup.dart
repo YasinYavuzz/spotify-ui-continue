@@ -1,11 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:spotify/widgets/getstarted.dart';
 
 class StartUpWidget extends StatefulWidget {
-   bool click;
- StartUpWidget({required this.click});
+  bool click;
+  StartUpWidget({required this.click});
 
   @override
   State<StartUpWidget> createState() => _StartUpWidgetState();
@@ -18,35 +16,33 @@ class _StartUpWidgetState extends State<StartUpWidget> {
   bool _click = false;
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
-          child: Column(
-        children: [
-          IconButton(
-            icon: Icon(Icons.ac_unit,color: Colors.white,),
-            onPressed: (){
-              setState(() {
-                Navigator.push<void>(
-                                context,
-                                MaterialPageRoute<void>(
-                                  builder: (BuildContext context) =>
-                                       GetStarted(),
-                                ),
-                              );
-              });
-
-          }),
-          AnimatedCrossFade(
+          child: GestureDetector(
+        onTap: () {
+          setState(() {
+            Navigator.push<void>(
+              context,
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => GetStarted(),
+              ),
+            );
+          });
+        },
+        child: Container(
+          //margin: EdgeInsets.only(top: 10),
+          child: AnimatedCrossFade(
             firstChild: Image.asset('assets/spotifyLogo.png'),
             secondChild: Image.asset('assets/spotifyLogoGreen.png'),
-            duration: Duration(seconds:1),
-            firstCurve: Curves.bounceIn,
-            secondCurve: Curves.bounceInOut,
-            crossFadeState: widget.click ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+            duration: Duration(seconds: 3),
+            firstCurve: Curves.easeInOutSine,
+            secondCurve: Curves.elasticIn,
+            crossFadeState: widget.click
+                ? CrossFadeState.showFirst
+                : CrossFadeState.showSecond,
           ),
-        ],
+        ),
       )),
     );
   }

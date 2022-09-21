@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
@@ -11,10 +10,22 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
-  List<String> _songArtist = ["Juice Wrld, Drake, Kendrick","Joji, The KID LAROI","Lamar and more..."];
-  List<String> _songType = ["Hip Hop Mix","Moody Mix","Moody Mix"]; 
-  List<String> _albumPhoto = ["assets/song1.png","assets/song2.png","assets/song2.png"];
-  List<String> _artists = ["assets/artist1.png","assets/artist.png","assets/artist.png"];
+  List<String> _songArtist = [
+    "Juice Wrld, Drake, Kendrick",
+    "Joji, The KID LAROI",
+    "Lamar and more..."
+  ];
+  List<String> _songType = ["Hip Hop Mix", "Moody Mix", "Moody Mix"];
+  List<String> _albumPhoto = [
+    "assets/song1.png",
+    "assets/song2.png",
+    "assets/song2.png"
+  ];
+  List<String> _artists = [
+    "assets/artist1.png",
+    "assets/artist.png",
+    "assets/artist.png"
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,9 +172,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           children: [
                             Container(
                               alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                _albumPhoto[index]
-                              ),
+                              child: Image.asset(_albumPhoto[index]),
                             ),
                             Container(
                               alignment: Alignment.centerLeft,
@@ -236,7 +245,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                               alignment: Alignment.center,
                               child: Image.asset('${_artists[index]}'),
                             ),
-                            
                           ],
                         ),
                       );

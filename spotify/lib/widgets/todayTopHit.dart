@@ -181,29 +181,26 @@ class _TodayTopHitsState extends State<TodayTopHits> {
                 ),
                 Container(
                   width: 35,
-                  
                   child: IconButton(
                     icon: Image.asset('assets/todayTopHitsBack.png'),
                     onPressed: () {},
                   ),
                 ),
                 Container(
-                  
                   child: IconButton(
                     icon: Image.asset('assets/todayHitsPlayButton.png'),
                     onPressed: () {
                       Navigator.push<void>(
-                                context,
-                                MaterialPageRoute<void>(
-                                  builder: (BuildContext context) =>
-                                       StartUpWidget(click: false),
-                                ),
-                              );
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) =>
+                              StartUpWidget(click: false),
+                        ),
+                      );
                     },
                   ),
                 ),
                 Container(
-                  
                   width: 35,
                   child: IconButton(
                     icon: Image.asset('assets/todayTopHitsNext.png'),
@@ -225,14 +222,11 @@ class _TodayTopHitsState extends State<TodayTopHits> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.only(
-                  top: 15
-                ),
+                margin: EdgeInsets.only(top: 15),
                 child: Image.asset('assets/todayTopHitsBluetooth.png'),
               ),
               Container(
-                
-                margin: EdgeInsets.only(left: 10,top: 15),
+                margin: EdgeInsets.only(left: 10, top: 15),
                 child: Text(
                   "Airpods Pro",
                   style: TextStyle(
@@ -244,46 +238,40 @@ class _TodayTopHitsState extends State<TodayTopHits> {
             ],
           ),
           Container(
-            margin: EdgeInsets.only(top:25),
+            margin: EdgeInsets.only(top: 25),
             width: 300,
             height: 55,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: Color(0xff0D0D0D),
-              borderRadius: BorderRadius.circular(40)
-            ),
+                color: Color(0xff0D0D0D),
+                borderRadius: BorderRadius.circular(40)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
                   margin: EdgeInsets.only(left: 10),
-                  child: IconButton(onPressed: () {
-                    
-                  }, icon: Image.asset('assets/topHitsHeart.png')),
-
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: Image.asset('assets/topHitsHeart.png')),
                 ),
                 Container(
-                  child: IconButton(onPressed: () {
-                    
-                  }, icon: Image.asset('assets/todayTopHitsMicrophone.png')),
-
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: Image.asset('assets/todayTopHitsMicrophone.png')),
                 ),
                 Container(
-                  child: IconButton(onPressed: () {
-                    
-                  }, icon: Image.asset('assets/todayTopHitsPlaylist.png')),
-
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: Image.asset('assets/todayTopHitsPlaylist.png')),
                 ),
                 Container(
                   margin: EdgeInsets.only(right: 10),
-                  child: IconButton(onPressed: () {
-                    
-                  }, icon: Image.asset('assets/todayTopHitsDevice.png')),
-
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: Image.asset('assets/todayTopHitsDevice.png')),
                 ),
               ],
-
             ),
           )
         ],
